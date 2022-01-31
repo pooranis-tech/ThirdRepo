@@ -1,0 +1,85 @@
+I have learnt the following things in Git.
+
+Git is used for version control and we can work on local host and use git server to collabrate with other users.
+Free Git server is Github.
+
+To install Git:
+Go to google--> git for windows-->download and install it (git Bash will be installed and its used to work on git)
+
+To Configure Git: In gitbash
+$ git config --global user.name "sample-username"
+$ git config --global user.email sample-emailid
+
+To work on that location:
+
+$ pwd (Shows the current directory and i will be always user's profile ie : c:/users/sample)
+$ mkdir git_demo (Folder is created under C:/users/sample/git_demo)
+$ cd git_demo/ (this command moves the directory location to git_demo)
+$ mkdir FirstRepo (This is a new folder created under git_demo folder)
+$ cd FirstRepo/ (Moves the directory inside this)
+
+-----------------Need to initialize this directory to git( It makes it as Master-branch)----------
+$ git init (Initilization done it created a hidden file .git in our folder)
+
+$ touch master.txt (Creates a file in that location: FirstRepo)
+$ notepad master.txt ( Opens the file for us to edit/view) --> Update some content in it. Till now we are using local host. Git to track we need to add and commit to git.
+ Add & Commit changes done in the repository
+$ git add . (Adds all the files which has been updated)
+$ git commit -m "Message" (Message gets updated)
+$ git status ( It gives the info)
+$ git log (It gives us the log history)
+
+--------------------------------------------------
+Go to github website and sign-up for the first time to connect a local respository/folder to server we need a place holder which is nothing but a repository created in the server as the same name as localrepository)
+Note: Dont enable the readme file as the respository is not a new and its an existing one in the localhost)
+
+Step2: Copy https/SSH url to paste it in our gitbash prompt - SSH key is not yet created so used HTTPS URL
+--------------------------------------------------------------------------------
+$ git remote add origin https://github.com/sample-username/Firstrepo.git/ (HTTPS URL copied from the respository)
+$ git remote -v (Gives the fetch and push details)
+$ git push -u origin master (Pushes the local repository changes to git server with the commit No)
+
+--------Again if you change anything in the local host file need to add,commit and push to git server.......
+SSH Mechansium:
+
+$ ssh-keygen -t rsa -C sample-emailID (It creates a public and private keys)
+(It asks for file location to store the key, leave it as default, enter the phrase: "Dont forget this Phrase")
+Now go to the public key file ,copy and paste the key into  the github server-->setting-->RSA&GAP keys-->Paste it.
+Unique authentication has been created via SSH
+-------------------------------------------------------------------------------\
+$ ssh -T git@github.com (Sucessfully logs in to github)
+$ ls (list files in that directory)
+$ clear (Clear the contents) Shift+ins to paste 
+------------------------------------------------------------------------------
+To clone the repsoitory created on server to local host
+
+Go to the github server,create a new repository as SecondRepo, enable readme file as its a new repository getting created directly on the server and copy the SSH URL for the same
+------------------------------------------------------------------------------
+$ pwd (Shows the path of current working directory)
+$ cd (Leave the directory one level back and its now on /git_demo
+$ git clone SSHURL(Copied from git server)
+$ ls (will show the SecondRepo folder as well)
+
+$ cd SeondRepo/
+$ touch sample3.txt
+$ notepad sample3.txt (Write some data, Now we need to add it to git,commit and push it gitserver so that tracking can be enabled for this doc too)
+$ git add .
+$ git commit -m "Created a text file from local and pushing it to the server repository"
+$ git push -u origin master
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
